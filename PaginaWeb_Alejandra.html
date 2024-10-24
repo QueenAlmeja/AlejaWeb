@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende con Ale 💻 </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Poppins:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #9d8189;
+            color: #100e0e; /* Color oscuro para el texto */
+        }
+        header {
+            background-color: #ffcad4;
+            color: #ffe5d9;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Quicksand', sans-serif; /* Aplica la fuente Quicksand al título */
+            color: #333; /* Color oscuro para el título */
+        }
+        header h2 {
+            font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins al subtítulo */
+            color: #555; /* Color oscuro para el subtítulo */
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Coloca las secciones en columnas */
+            gap: 25px; /* Espacio entre las secciones */
+            padding: 20px;
+        }
+        .section {
+            background-color: #fff; /* Fondo blanco para todas las secciones */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0.1, 0.1, 0.1, 0.1);
+            padding: 20px;
+            text-align: center; /* Centra el contenido dentro de la sección */
+        }
+        .contact-section,
+        study-guides-section,
+        projects-section,
+        weekly-recommendations-section,
+        about-me-section { /* Añadido para la nueva sección */
+            background-color: #fff; /* Fondo blanco para secciones específicas */
+        }
+        .contact-section {
+            background-color: #e9ecef;
+        }
+        button {
+            background-color: #3AE6AA;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            display: block; /* Asegura que el botón esté en bloque para centrarlo */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .section-image {
+            width: 100%; /* Ajusta el ancho al 100% del contenedor */
+            height: auto; /* Mantiene la relación de aspecto */
+            border-radius: 5px;
+        }
+        .fixed-size-image {
+            width: 50px; /* Ajusta el ancho fijo */
+            height: 20px; /* Ajusta la altura fija */
+            object-fit: cover; /* Mantiene la relación de aspecto */
+            border-radius: 5px; /* Bordes redondeados opcional */
+        }
+        /* Estilo para eliminar el subrayado de los enlaces */
+        a {
+            text-decoration: none; /* Elimina el subrayado de los enlaces */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aprende con Ale 💻</h1>
+        <h2>Te enseño Python, JavaScript y HTML mientras yo sigo aprendiendo 🎮🚀</h2>
+        <h3>No tengas miedo a romper el código</h3>
+    </header>
+    
+    <div class="container">
+        <!-- Nueva sección: Sobre mi (ahora es la primera) -->
+        <section class="section" id="about-me-section">
+            <h2>Sobre mi 💛🌻</h2>
+            <img src="https://media.istockphoto.com/id/859613042/es/foto/receso.webp?s=1024x1024&w=is&k=20&c=bBo_c14osm9sP6VG9pNEoQIE-mkrBnJHFJvA4gda3tw=" alt="Sobre mi" class="section-image">
+            <p>Hola, soy Ale. Me apasiona enseñar y aprender Python, y estoy aquí para compartir mis conocimientos contigo.</p>
+            <button onclick="scrollToSection('weekly-recommendations-section')">Conóceme</button>
+        </section>
+</section>
+        <section class="section" id="learning-progress-section">
+            <h2>Avances de Aprendizaje</h2>
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avances de Aprendizaje" class="section-image">
+            <p>Aprendamos paso a paso</p>
+            <p>De los básico a los más avanzado</p>
+            <button onclick="addLearningProgress()">Agregar Nuevo Avance</button>
+        </section>
+        
+        <section class="section" id="study-guides-section">
+            <h2> 📎 Guías de Estudio</h2>
+            <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Guías de Estudio" class="section-image">
+            <p>Repasemos los básico con ejercicios prácticos y poniendo a prueba nuestra creatividad y cotidianidad</p>
+            <button onclick="addStudyGuide()">Agregar Nueva Guía</button>
+        </section>
+        
+        <section class="section" id="projects-section">
+            <h2> 🔨 Proyectos</h2>
+            <img src="https://plus.unsplash.com/premium_photo-1705010649877-f561dd47dee9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Proyectos" class="section-image">
+            <p>Lo que he hecho con lo que he aprendido</p>
+            <p>Te lo comparto, así no más</p>
+            <button onclick="addProject()">Agregar Nuevo Proyecto</button>
+        </section>
+        
+        <section class="section" id="weekly-recommendations-section">
+            <h2> 😎 Recomendaciones Semanales</h2>
+            <img src="https://images.unsplash.com/photo-1694632553150-b8e5ba1288c5?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Recomendaciones Semanales" class="section-image">
+            <p>Hagamos un pausa del código</p>
+            <p>Disfruta de tus hobbits, aquí te comparto lo que me gusta ver, leer y escuchar en mis tiempos libros</p>
+            <button onclick="addRecommendation()">Agregar Nueva Recomendación</button>
+        </section>
+
+        <section class="section contact-section">
+            <h2>Contacto</h2>
+            <img src="https://media.istockphoto.com/id/1257762021/es/foto/qu%C3%A9-es-mejor-que-la-comodidad-del-hogar-no-mucho-realmente.webp?s=1024x1024&w=is&k=20&c=AmL2SKBWOqsvAGWP-wPR3mCbb8egoFs-Mu1h4Bqeb30=" alt="Contacto" class="section-image">
+            <p>Encuéntrame en mis redes sociales:</p>
+            <a href="https://wa.me/34600123456?text=Hola%2C%20estoy%20interesada%20en%" target="_blank"></a>
+            <button>Contactar por WhatsApp</button>
+            </a>
+            <a href="mis-redes-sociales.html" target="_blank">
+                <button>Mis Redes Sociales</button>
+            </a>
+        </section>
+    </div>
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Funciones para agregar contenido (opcional)
+        function addRecommendation() {
+            // Código para agregar nueva recomendación
+        }
+    </script>
+</body>
+</html>
+    
